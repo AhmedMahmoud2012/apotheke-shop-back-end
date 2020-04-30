@@ -1,0 +1,172 @@
+{
+	"info": {
+		"_postman_id": "16cb1947-4482-4839-8ced-97a5d208f9e3",
+		"name": "shop Apotheke Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "List of the most popular repos sorted by number of stars",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/repositories/search/",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"repositories",
+						"search",
+						""
+					]
+				},
+				"description": "List of the most popular repos sorted by number of stars"
+			},
+			"response": []
+		},
+		{
+			"name": "Using given date - List of the most popular repos",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/repositories/search/?created=2020-04-29",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"repositories",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "created",
+							"value": "2020-04-29"
+						}
+					]
+				},
+				"description": "Using given date - List of the most popular repos"
+			},
+			"response": []
+		},
+		{
+			"name": "View top 10,50,100",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/repositories/search/?per_page=50",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"repositories",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "per_page",
+							"value": "50"
+						}
+					]
+				},
+				"description": "View top 10,50,100"
+			},
+			"response": []
+		},
+		{
+			"name": "Filter by Language",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/repositories/search/?language=python",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"repositories",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "language",
+							"value": "python"
+						}
+					]
+				},
+				"description": "Filter by Language"
+			},
+			"response": []
+		},
+		{
+			"name": "All in one request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "{{domain}}/repositories/search/?per_page=50&language=python&created=2020-04-29",
+					"host": [
+						"{{domain}}"
+					],
+					"path": [
+						"repositories",
+						"search",
+						""
+					],
+					"query": [
+						{
+							"key": "per_page",
+							"value": "50"
+						},
+						{
+							"key": "language",
+							"value": "python"
+						},
+						{
+							"key": "created",
+							"value": "2020-04-29"
+						}
+					]
+				},
+				"description": "All in one request"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "1de36de6-f491-4013-87e0-0b439fc3f2cb",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "07566d22-5041-4ddd-a564-529555d71868",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"id": "9ba67983-9c85-4528-b528-7a0a58e89d7d",
+			"key": "domain",
+			"value": "http://localhost:3000",
+			"type": "string"
+		}
+	],
+	"protocolProfileBehavior": {}
+}
